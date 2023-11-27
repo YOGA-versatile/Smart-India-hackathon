@@ -1,0 +1,260 @@
+:root {
+    --text: #0a0b0a;
+    --background: #F5F5F5;
+    --primary: #224952;
+    --secondary: #186049;
+    --tertiary: #247158;
+    --forth : #6AB29B;
+    --accent: #E4D5C7;
+    --white: #fff;
+    /* font  */
+    --subtitle :1.8rem;
+  }
+  
+  body{
+      background-color: var(--background);
+  }
+  /* important css */
+  .productcard {
+      margin-top: 20px;
+      border: none;
+      background-color: var(--background);
+  
+  }
+  
+  
+  
+  
+  .sortButton,
+  .sortButton:hover,
+  .sortButton:active {
+      background-color: none;
+      border: 2px solid var(--primary); 
+      border-radius: 12px;
+      color: var(--primary);
+  }
+  
+  .dropdown-menu,
+  .dropdown-menu:hover,
+  .dropdown-menu:focus,
+  .dropdown-menu:active {
+      background-color: none;
+      border-radius: 0px;
+      border: none;
+      --bs-dropdown-link-active-bg: none;
+  }
+  
+  .dropdown-menu button,
+  .dropdown-menu button:hover,
+  .dropdown-menu button:active,
+  .dropdown-menu button:focus  {
+      color: var(--primary);
+      border: none;
+      padding: 5px 10px;
+  }
+  
+  
+  .productcard-img {
+      width: 100%;
+      max-height: 200px;
+      min-height: 200px;
+      object-fit: contain;
+  }
+  .productcard-title {
+      text-align: center;
+      font-family: "Roboto Slab";
+  }
+  .productsorted {
+      margin-top: 20px;
+      text-align: center;
+  }
+  .producttop-navbar {
+      padding: 10px 0;
+      top: 0;
+      z-index: 100;
+  }
+  .ratings i{
+      color: #FFA500;
+      font-size: 1rem;   
+  }
+  
+  
+  @media (max-width: 767px) {
+      .card-title {
+          font-size: 1rem;
+      }
+      .gotocent {
+          text-align: center;
+      }
+    
+      .ratings i{
+          font-size: 1rem
+      }
+      .stock,
+      .price {
+          text-align: center;
+          margin-bottom: 10px;
+      }
+      .price #pricelimit{
+          font-size: 0.8rem
+      }
+      .price #priceunlimit{
+          font-size: 1rem;
+      }
+      
+    
+      .morebtnCard {
+          display: block;
+          margin: 0 auto;
+      }
+    }
+    
+    /* For tablets */
+    @media (min-width: 768px) and (max-width: 991px) {
+      .card-title {
+          font-size: 1.1rem;
+      }
+      .price #pricelimit{
+          font-size: 1rem
+      }
+      .price #priceunlimit{
+          font-size: 1.4rem;
+      }
+    }
+    
+    /* For laptops and larger screens */
+    @media (min-width: 992px) {
+      .card-title {
+          font-size: 1.2rem;
+      }
+      .price #pricelimit{
+          font-size: 1rem
+      }
+      .price #priceunlimit{
+          font-size: 1.4rem;
+      }
+         
+    }
+    .relatedProduct .productcard {
+      background-color: var(--background);
+      margin-top: 20px;
+      border: none;
+      padding: 0px;
+    }
+    
+    .productcard-img {
+      width: 100%;
+      max-height: 200px;
+      min-height: 200px;
+      object-fit: contain;
+    }
+    .productcard-title {
+      text-align: center;
+      font-family: "Roboto Slab";
+    }
+    
+    .productcard h5 {
+      margin-top: 2%;
+    }
+    .productcard img {
+      width: 100%;
+      height: auto;
+    }
+    .productcard img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .vc {
+      background-color:#ed1c1c;
+      color: #fff;
+      text-align: center;
+      padding: 6.5px 18px;
+      position: absolute;
+      z-index: 100;
+    }
+    .vc:after {
+      width: 0;
+      height: 0;
+      border: 10px solid transparent;
+      position: absolute;
+      content: "";
+      border-top-color:#ed1c1c;
+      right: -20px;
+      top: 0px;
+      border-left-color:#ed1c1c;
+    }
+    .vc:before {
+      border: 15px solid transparent;
+      position: absolute;
+      content: "";
+      border-bottom-color:#ed1c1c;
+      right: -15px;
+      top: 7px;
+    }
+    
+    .productcard .morebtnCard {
+      background-color: var(--tertiary);
+      color: var(--background);
+      border:2px solid var(--tertiary);
+      width: 50%;
+    }
+    .productcard .morebtnCard:hover{
+      /* transform: scale(1.2); */
+      background-color: var(--secondary);
+      color: var(--background);
+      border:2px solid var(--secondary);
+    }
+    .gotocent{
+      text-align: center;
+    }
+  
+    .sideMenu{
+      background-color: var(--background);
+    }
+  
+    input[type="range"] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 10px;
+      margin: 10px 0;
+      background-color: #ddd; /* Track color */
+      border-radius: 5px;
+    }
+  
+    input[type="range"]:focus {
+      outline: none;
+    }
+  
+    input[type="range"]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 10px;
+      cursor: pointer;
+      animate: 0.2s;
+      border-radius: 5px;
+      background: var(--tertiary); /* Track color when slider is not active */
+    }
+  
+    input[type="range"]::-webkit-slider-thumb {
+      box-shadow: 0.1px 0.1px 1px #000000;
+      border: 1px solid var(--primary);
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background: #FFFFFF; /* Thumb color */
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -5px;
+    }
+  
+    input[type="range"]:focus::-webkit-slider-runnable-track {
+      background: var(--tertiary); /* Track color when slider is active/focused */
+    }
+    #rangeValues {
+      margin-top: 20px;
+    }
+  
+    .form-group .form-check i{
+      color: #FFA500;
+    }

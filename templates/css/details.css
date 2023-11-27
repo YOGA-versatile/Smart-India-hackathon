@@ -1,0 +1,501 @@
+:root {
+    --text: #0a0b0a;
+    --background: #F5F5F5;
+    --primary: #224952;
+    --secondary: #186049;
+    --tertiary: #247158;
+    --forth : #6AB29B;
+    --accent: #E4D5C7;
+    /* font  */
+    --subtitle :1.8rem;
+  }
+  body{
+    background-color: var(--background) !important;
+  }
+  
+  .productInfo{
+    padding: 5px;
+    border: none;
+    border-radius: 6px;
+    background-color: white;
+  }
+  
+  .fotorama img.fotorama__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .fotorama__thumb-border {
+    border-color: var(--primary) !important;
+    outline: none;
+  }
+  
+  .productPicture{
+    padding: 5px;
+  }
+  
+  .buyButton {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .quantity-input {
+    display: flex;
+    margin-right: 10px;
+  }
+  
+  .quantity-input input[type="number"] {
+    max-width: 45%;
+    text-align: center;
+    border: none;
+    border-radius: 0px 0px 0px 0px ;
+    border-top: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+  }
+  
+  
+  .detail h3{
+    font-family: 'Roboto Slab';
+    color: var(--accent);
+  }
+  .productname{
+    color: var(--primary);
+  }
+  
+  
+  .detail {
+    padding: 15px;
+    padding-bottom: 0;
+    font-family: 'IBM Plex Sans';
+    text-align: center;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #529B38;
+    border-radius: 8px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+  }
+  
+  .customerRating i,
+  .ratings i{
+    color: #FFA500;
+    font-size: 1rem;
+  
+  }
+  
+  .buyButton .quantityButton1{
+    color: var(--text);
+    background-color: var(--background);
+    border-radius: 8px 0px   0px  8px;
+    border-top: 2px solid var(--primary);
+    border-left: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+  
+  }
+  
+  .buyButton .quantityButton1:hover{
+    color: var(--background);
+    background-color: var(--primary);
+    border-radius: 8px 0px   0px  8px;
+    border-top: 2px solid var(--primary);
+    border-left: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+  }
+  
+  .buyButton .quantityButton2{
+    color: var(--text);
+    background-color: var(--background);
+    border-radius: 0px 8px 8px  0px ;
+    border-top: 2px solid var(--primary);
+    border-right: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+  
+  }
+  
+  .buyButton .quantityButton2:hover{
+    color: var(--background);
+    background-color: var(--primary);
+    border-radius: 0px 8px 8px  0px ;
+    border-top: 2px solid var(--primary);
+    border-right: 2px solid var(--primary);
+    border-bottom: 2px solid var(--primary);
+  }
+  
+  .buyButton .addCartButton{
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    background-color: var(--background);
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 55%;
+  }
+  .buyButton .addCartButton:hover{
+    color: var(--background);
+    border: 2px solid var(--primary);
+    background-color: var(--primary);
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 55%;
+  }
+  
+  .product-description .buyNowButton{
+    color: var(--background);
+    border: none;
+    background-color: var(--primary);
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 55%;
+  }
+  .product-description .buyNowButton:hover{
+    color: var(--primary);
+    border: 2px solid  var(--primary);
+    background-color: var(--background);
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 55%;
+  }
+  
+  
+  
+  .description ul {
+    text-align: center;
+    color: gray;
+  }
+  
+  .hvr-grow {
+    display: inline-block;
+    vertical-align: middle;
+    backface-visibility: hidden;
+    -moz-osx-font-smoothing: grayscale;
+    transition-duration: 0.4s;
+    transition-property: transform;
+  }
+  
+  .hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+    transform: scale(1.1);
+  }
+  .hidden{
+    display: none;
+  }
+  .stock{
+    font-size: 1.2rem;
+    color: red;
+  }
+  
+  .description h3,
+  .relatedProduct h3,
+  .customersReviews h3{
+    text-align: center;
+    color: var(--accent);
+    font-family: 'Roboto Slab';
+  }
+  
+  .description h5,
+  .relatedProduct h5{
+    color: var(--primary);
+  }
+  
+  .description hr,
+  .relatedProduct hr,
+  .customersReviews hr{
+    height: 2px; 
+    background-color: var(--primary); 
+    border: none; 
+    margin: 20px 0; 
+  }
+  .description,.relatedProduct, .customersReviews{
+    font-family: 'IBM Plex Sans';
+    border-width: 3px;
+    border-radius: 8px;
+    background-color: var(--background);
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+  }
+  
+  .customersReviews #customerName{
+    font-weight: 200;
+  }
+  .customersReviews #reviewDate{
+    font-weight: 100;
+    color: grey;
+    font-size: 1rem;
+  }
+  .customersReviews .customerActualReview{
+    font-size: 1.25rem;
+  }
+  .customersReviews .reviews{
+    padding: 25px;
+    background-color: var(--background);
+    border-radius: 12px;
+  }
+  
+  
+  .related{
+    align-items: center;
+    width: auto;
+    border-radius: 10px;
+    border: none;
+  }
+  .relatedItem{
+    text-align: center;
+    border: none;
+    border-radius: 0px;
+    padding: 5px;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 2px 8px 0 rgba( 31, 38, 135, 0.37 );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+  
+  }
+  .related img {
+    object-fit: fill;
+    /* height: 100%;
+    width: 100%; */
+  }
+  
+  .imageContainer{
+    padding: 0%;
+    max-width: 250px;
+    max-height: 210px;
+    
+  }
+  
+  .detail #saveIt{
+    float: right;
+  }
+  .bi-bookmark-fill{
+    color: var(--primary);
+  }
+  .bi-bookmark{
+    color: var(--accent);
+  }
+  
+  
+  
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  /* input[type="number"] {
+    -moz-appearance: textfield;
+  } */
+  
+  
+  .productcard-img {
+    width: 100%;
+    max-height: 200px;
+    min-height: 200px;
+    object-fit: contain;
+  }
+  
+  .productcard-title {
+    text-align: center;
+    font-family: "Roboto Slab";
+  }
+  
+  .productsorted {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .producttop-navbar {
+    padding: 10px 0;
+    top: 0;
+  }
+  .gotocent {
+    text-align: center;
+  }
+  
+  
+  .productcard h5 {
+    margin-top: 2%;
+  }
+  
+  .productcard img {
+    width: 100%;
+    height: auto;
+  }
+  .productcard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .prodes,.cusrev,.relpro{
+    color:var(--primary) !important;
+  }
+  .prodes span{
+    font-size:90%;
+  }
+  
+  .image-container {
+    perspective: 1000px;
+  }
+  .image-card {
+    height: 200px;
+    position: relative;
+  }
+  
+  
+  
+  .card{
+    background-color: var(--background);
+  }
+  .detail{
+    border: none;
+  }
+  .product-card__promotion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ffffff;
+    width: 30%;
+    height: 2.25rem;
+    background-color: var(--primary);
+    border-radius: 5px;
+    position: absolute;
+    line-height: 1;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06);
+    z-index: 100;
+  }
+  .list-group-item{
+    background-color: var(--background);
+  }
+  /* for cart canva dlt btn  */
+  .dlt-btn{
+    background-color: var(--primary) !important;
+  } 
+  
+  @media (max-width: 767px) {
+    .card-title {
+        font-size: 1rem;
+    }
+    .gotocent {
+        text-align: center;
+    }
+  
+    .ratings i{
+        font-size: 1rem
+    }
+    .stock,
+    .price {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .price #pricelimit{
+        font-size: 0.8rem
+    }
+    .price #priceunlimit{
+        font-size: 1rem;
+    }
+    
+  
+    .morebtnCard {
+        display: block;
+        margin: 0 auto;
+    }
+  }
+  
+  /* For tablets */
+  @media (min-width: 768px) and (max-width: 991px) {
+    .card-title {
+        font-size: 1.1rem;
+    }
+    .price #pricelimit{
+        font-size: 1rem
+    }
+    .price #priceunlimit{
+        font-size: 1.4rem;
+    }
+  }
+  
+  /* For laptops and larger screens */
+  @media (min-width: 992px) {
+    .card-title {
+        font-size: 1.2rem;
+    }
+    .price #pricelimit{
+        font-size: 1rem
+    }
+    .price #priceunlimit{
+        font-size: 1.4rem;
+    }
+       
+  }
+  .relatedProduct .productcard {
+    background-color: var(--background);
+    margin-top: 20px;
+    border: none;
+    padding: 0px;
+  }
+  
+  .productcard-img {
+    width: 100%;
+    max-height: 200px;
+    min-height: 200px;
+    object-fit: contain;
+  }
+  .productcard-title {
+    text-align: center;
+    font-family: "Roboto Slab";
+  }
+  
+  .productcard h5 {
+    margin-top: 2%;
+  }
+  .productcard img {
+    width: 100%;
+    height: auto;
+  }
+  .productcard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .vc {
+    background-color:#ed1c1c;
+    color: #fff;
+    text-align: center;
+    padding: 6.5px 18px;
+    position: absolute;
+    z-index: 100;
+  }
+  .vc:after {
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    position: absolute;
+    content: "";
+    border-top-color:#ed1c1c;
+    right: -20px;
+    top: 0px;
+    border-left-color:#ed1c1c;
+  }
+  .vc:before {
+    border: 15px solid transparent;
+    position: absolute;
+    content: "";
+    border-bottom-color:#ed1c1c;
+    right: -15px;
+    top: 7px;
+  }
+  
+  .productcard .morebtnCard {
+    background-color: var(--tertiary);
+    color: var(--background);
+    border:2px solid var(--tertiary);
+    width: 50%;
+  }
+  .productcard .morebtnCard:hover{
+    /* transform: scale(1.2); */
+    background-color: var(--secondary);
+    color: var(--background);
+    border:2px solid var(--secondary);
+  }
+
+  .download-button {
+    margin-left: 100px; /* Adjust the margin as needed */
+}

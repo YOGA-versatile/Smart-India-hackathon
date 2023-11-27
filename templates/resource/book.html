@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title></title>
+    <link rel="shortcut icon" type="image/x-icon" href="htdocs/asset/icon/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=IBM Plex Sans' rel='stylesheet'>
+    <!--<link href="htdocs/css/header.css" rel="stylesheet">
+    <link href="htdocs/css/footer.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="../css/book.css">
+</head>
+
+<body>
+    <div class="main-body">
+        <section class="section-content py-10 py-md-10">
+            <div class="container-fluid  wholeContainer">
+                <div class="row">
+                    <aside class="col-lg-3 sideMenu">
+                        <div class="container mt-2" style="display:flex;flex-direction:row;">
+                            <div class="d-block ">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle sortButton" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Sort by
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><button class="dropdown-item" type="button" onclick="changeSort('best_selling')">Best Selling</button></li>
+                                        <li><button class="dropdown-item" type="button" onclick="changeSort('newest_arrivals')">Newest Arrivals</button></li>
+                                        <li><button class="dropdown-item" type="button" onclick="changeSort('low_to_high')">Price, low to high</button></li>
+                                        <li><button class="dropdown-item" type="button" onclick="changeSort('high_to_low')">Price, high to low</button></li>
+                                    </ul>
+                                </div>
+                                <div id="selectedSort"></div>
+                            </div>
+                            <div class="d-block d-lg-none p-1">
+                                <button class="btn btn-success" type="button" data-bs-toggle="offcanvas" data-bs-target="#fileroffcanvas" aria-controls="fileroffcanvas">
+                                    Filter By
+                                </button>
+                            </div>
+                        </div>
+                        <div class="d-none d-sm-none d-md-none d-lg-block filterBox p-2">
+                            <div class="container">
+                                <form action="">
+                                    <p class="fs-4">Filters</p>
+                                    <label for="averageRating" class="form-label fs-5 mt-3">Average Customer review</label>
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="checkbox1">
+                                            <label class="form-check-label" for="checkbox1">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> <i class="bi bi-star"></i> &amp; Up
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="checkbox2">
+                                            <label class="form-check-label" for="checkbox2">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> <i class="bi bi-star"></i><i class="bi bi-star"></i> &amp; Up
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="checkbox3">
+                                            <label class="form-check-label" for="checkbox3">
+                                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> <i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i> &amp; Up
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="checkbox4">
+                                            <label class="form-check-label" for="checkbox4">
+                                                <i class="bi bi-star-fill"></i> <i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i> &amp; Up
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+                                    <label for="averageRating" class="form-label fs-5 mt-3">Categories</label>
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="checkbox4">
+                                            <label class="form-check-label" for="checkbox4">
+                                                sidhaa
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="checkbox4">
+                                            <label class="form-check-label" for="checkbox4">
+                                                Airuvedha
+                                            </label>
+                                        </div>
+                                    </div>
+                                </form>
+
+                            </div>
+                        </div>
+
+                    </aside>
+
+                    <section class="col-md-9 mb-3 mt-3 productsSection">
+                        <div class="container mt-1 mb-1">
+                            <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3">
+                           
+            <div class="col">
+                <div class="card productcard" style="--i:1">
+
+                    <div class="card-body">
+                        <img src="../asset/img/s1.jpg" class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice">
+                        <p class="card-title productcard-title text-center" id="productname" name="productname"><strong>Medical</strong></p>
+                        <div class="gotocent">
+                            <p class="ratings">
+                                <span id="totalProductRatings"></span>
+                            </p>
+                            <h6 class="stock" id="stock"></h6>
+                            <h6 class="price" id="price"></h6>
+                           
+                            <a href="details.html" class="btn morebtnCard">more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card productcard" style="--i:1">
+
+                    <div class="card-body">
+                        <img src="../asset/img/s1.jpg" class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice">
+                        <p class="card-title productcard-title text-center" id="productname" name="productname"><strong>Medical</strong></p>
+                        <div class="gotocent">
+                            <p class="ratings">
+                                <span id="totalProductRatings"></span>
+                            </p>
+                            <h6 class="stock" id="stock"></h6>
+                            <h6 class="price" id="price"></h6>
+                           
+                            <a href="details.html" class="btn morebtnCard">more</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card productcard" style="--i:1">
+                    <div class="card-body">
+                        <img src="../asset/img/s1.jpg" class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice">
+                        <p class="card-title productcard-title text-center" id="productname" name="productname"><strong>Medical</strong></p>
+                        <div class="gotocent">
+                            <p class="ratings">
+                                <span id="totalProductRatings"></span>
+                            </p>
+                            <h6 class="stock" id="stock"></h6>
+                            <h6 class="price" id="price"></h6>
+                           
+                            <a href="details.html" class="btn morebtnCard">more</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card productcard" style="--i:1">
+                    <div class="card-body">
+                        <img src="../asset/img/s1.jpg" class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice">
+                        <p class="card-title productcard-title text-center" id="productname" name="productname"><strong>Medical</strong></p>
+                        <div class="gotocent">
+                            <p class="ratings">
+                                <span id="totalProductRatings"></span>
+                            </p>
+                            <h6 class="stock" id="stock"></h6>
+                            <h6 class="price" id="price"></h6>
+                           
+                            <a href="details.html" class="btn morebtnCard">more</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+                            </div>
+                        </div>
+
+                    </section>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="fileroffcanvas" aria-labelledby="fileroffcanvasLabel">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="container">
+                <form action="">
+                    <p class="fs-4">Filters</p>
+                    <label for="customRange3" class="form-label fs-5">Price Range</label>
+                    <input type="range" id="customRange" min="0" max="1000" step="20" value="500">
+                    <div id="rangeValues" class="fs-6">Max Price: 500</div>
+                    <label for="averageRating" class="form-label fs-5 mt-3">Average Customer review</label>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="checkbox1">
+                            <label class="form-check-label" for="checkbox1">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> <i class="bi bi-star"></i> &amp; Up
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="checkbox2">
+                            <label class="form-check-label" for="checkbox2">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> <i class="bi bi-star"></i><i class="bi bi-star"></i> &amp; Up
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="checkbox3">
+                            <label class="form-check-label" for="checkbox3">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i> <i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i> &amp; Up
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="checkbox4">
+                            <label class="form-check-label" for="checkbox4">
+                                <i class="bi bi-star-fill"></i> <i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i><i class="bi bi-star"></i> &amp; Up
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="loginModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content loginSignModal">
+
+            <!-- begin::modal-header -->
+            <div class="modal-header border border-transparent ">
+                <!-- begin::nav-tabs -->
+                <ul class="nav nav-tabs mb-3 fs-5">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#login_pane">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#signup_pane">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="tab" href="#forgot_pane">Forgot Password?</a>
+                    </li>
+                </ul>
+                <!-- end::nav-tabs -->
+
+                <!--begin::Close-->
+                <div class="btn btn-active-light-primary ms-2 fs-3" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="bi bi-x"></i>
+                </div>
+                <!--end::Close-->
+            </div>
+            <!-- end::modal-header -->
+
+            <!-- begin::modal-body -->
+            <div class="modal-body loginModal">
+                <div class="tab-content" id="myTabContent">
+                    <!-- begin::login pane -->
+                    <div class="tab-pane fade active show" id="login_pane" role="tabpanel">
+                        <form action="" class="" id="login-form">
+                            <div class="form-group">
+                                <label class="form-label fs-6 text-dark">Email id</label>
+                                <div class="">
+                                    <input class="form-control form-control-lg form-control-solid" type="text" name="phone_email" value="" required="" aria-required="true">
+                                </div>
+                            </div>
+                            <div class="form-group mb-3 mt-8" data-kt-password-meter="true">
+                                <label class="form-label text-dark fs-6 mb-0">Password</label>
+                                <div class="position-relative mb-3">
+                                    <input class="form-control form-control-lg form-control-solid" type="password" name="password" value="" required="" autocomplete="off" aria-required="true">
+                                </div>
+                            </div>
+                            <div class="form-group form-check form-check-custom form-check-solid form-check-sm mt-4">
+                                <label class="checkbox cursor-pointer">
+                                    <input type="checkbox" class="form-check-input" id="rememberMe" name="rememberMe" value="true"> Remember Me
+                                    <span></span>
+                                </label>
+                            </div>
+                            <input class="form-control form-control-lg form-control-solid" type="hidden" name="custom_error">
+                            <div class="modal-footer border-transparent">
+                                <button type="submit" >Login</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- end::login pane -->
+
+                    <!-- begin::signup pane -->
+                    <div class="tab-pane fade" id="signup_pane" role="tabpanel">
+                        <form action="/login-signup/register" class="" id="signup-form" method="POST" novalidate="novalidate">
+                            <input type="hidden" name="csrf_tokensignup-form" id="csrf_tokensignup-form" value="FRxQxXTpPPWG/8phF1W1MAa9+TDJNrs/kYdIOpeb57s=">
+                            <div class="form-group">
+                                <label class="form-label fs-6 text-dark">Email id</label>
+                                <div class="">
+                                    <input class="form-control form-control-lg form-control-solid" value="" type="text" name="phone_email" required="" aria-required="true">
+                                </div>
+                            </div>
+                            <div class="form-group mt-8" data-kt-password-meter="true">
+                                <label class="form-label text-dark fs-6 mb-0">Password</label>
+                                <div class="position-relative mb-3">
+                                    <input class="form-control form-control-lg form-control-solid" value="" type="password" name="password" maxlength="30" required="" autocomplete="off" aria-required="true">
+                                    <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
+                                        <i class="bi bi-eye-slash fs-2"></i>
+                                        <i class="bi bi-eye fs-2 d-none"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="modal-footer border-transparent">
+                                <button type="submit" >Sign Up</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- end::signup pane -->
+
+                    <!-- begin::forgot pane -->
+                    <div class="tab-pane fade" id="forgot_pane" role="tabpanel">
+                        <form action="/login-signup/resetPassword" class="" id="forgot-form" method="POST" novalidate="novalidate">
+                            <input type="hidden" name="csrf_tokenforgot-form" id="csrf_tokenforgot-form" value="Cy2iIBVRcL7V7imlDy7PydcooJYksBVCDDMca/Fczq4=">
+                            <div class="form-group">
+                                <label class="form-label fs-6 text-dark">Email id</label>
+                                <div class="">
+                                    <input class="form-control form-control-lg form-control-solid" type="text" name="phone_email" value="" required="" aria-required="true">
+                                </div>
+                            </div>
+                            <input class="form-control form-control-lg form-control-solid" type="hidden" name="custom_error">
+                            <div class="d-flex align-items-center otp-sent-successfully d-none flex-wrap">
+                                <div>
+                                    <i class="bi bi-check text-success"></i><span class="fw-bolder text-success">Password reset code sent successfully</span>
+                                </div>
+                                <span class="text-muted email-hint">In case if you can't find email in your inbox, then <b>please check your promotions/spam box.</b> (For email only)</span>
+                            </div>
+                            <div class="modal-footer border-transparent">
+                                <button type="submit" >Send Reset Code</button>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+   <!-- {% include "templates/_searchCanvas.php" %}
+    {% include "templates/_footer.php" %}
+
+    <script src="htdocs/js/script.js"></script>
+    <script src="htdocs/js/product.js"></script>
+     <script src="htdocs/js/shop.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+       
+const insertRating = function(productRating, totalRatings) {
+    const floatPart = productRating - Math.floor(productRating);
+
+    let ratingsElements = document.querySelectorAll(".ratings");
+
+    ratingsElements.forEach(element => {
+
+        let decimalPart = Math.floor(productRating);
+        let html = '';
+
+        while (decimalPart > 0) {
+            html += '<i class="bi bi-star-fill"></i>';
+            decimalPart--;
+        }
+
+        if (floatPart !== 0) {
+            html += '<i class="bi bi-star-half"></i>';
+        }
+
+        let remainingPart = 5 - Math.floor(productRating) - (2 * floatPart);
+
+        while (remainingPart > 0) {
+            html += '<i class="bi bi-star"></i>';
+            remainingPart--;
+        }
+
+        html += " (" + totalRatings + ")";
+
+        element.innerHTML = html;
+    });
+}
+
+// Example usage
+insertRating(3.5, 100);
+    </script>
+
+</body>
+
+
+</html>
