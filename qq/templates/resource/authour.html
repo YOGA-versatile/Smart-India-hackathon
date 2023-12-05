@@ -1,0 +1,609 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <link rel="shortcut icon" type="image/x-icon" href="htdocs/asset/icon/favicon.ico" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=IBM Plex Sans' rel='stylesheet'>
+    </head>
+    <style>
+       :root {
+            --text: #0a0b0a;
+            --background: #F5F5F5;
+            --primary: #224952;
+            --secondary: #186049;
+            --tertiary: #247158;
+            --forth : #6AB29B;
+            --accent: #E4D5C7;
+            --white: #fff;
+            /* font  */
+            --subtitle :1.8rem;
+          }
+        header{
+            padding: 15px;
+            background-color: var(--white);
+        }
+        .flex{
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .logo{
+            width:10%;
+            height:5%;
+        }
+        .elements{
+            margin: auto;
+            width:40%;
+            text-align:justify;
+        }
+        .elements span a{
+            margin-left: 5%;
+            font-size: 20px;
+            text-decoration: none;
+            color: var(--text);
+        }
+        .elements span a:hover{
+            color: var(--tertiary);
+        }
+        .endbtn{
+            margin-right: 3%;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        a.nav-link.endbtn {
+            display: inline-block;
+            padding: 10px 15px;
+            text-decoration: none;
+            border: none;
+            /* Add other styles as needed */
+        }
+        
+        a.nav-link.endbtn i {
+            margin-right: 5px; /* Adjust as needed for icon spacing */
+        }
+        .content{
+            width: 100%;
+            z-index: 100;
+            height: 200px;
+            left: 0;
+            margin-top: 1.3%;
+            display: none;
+            position: absolute;
+            opacity: 0.9;
+            background-color: var(--white);
+        }
+        
+        .login{
+            border: 2px solid var(--secondary);
+            border-radius: 10px;
+            color: var(--background);
+            background-color: var(--secondary);
+            font-size: 1rem;
+            height: 6%;
+            width: 6%;
+            margin-top: 0.5%;
+        }
+        .login:hover{
+            border: 2px solid var(--primary);
+            color: var(--background);
+            background-color: var(--primary);
+            height: 5%;
+            margin-top: 0.5%;
+        }
+        
+        @media (max-width: 767.98px){
+            .logo{
+                width: 30%;
+                /* height: 1/0px; */
+                position: absolute;
+                left: 30%;
+            }
+            .elements span a,.downarrow,.login{
+                display: none;
+            }
+            .list{
+                display: block;
+            }
+            .listbtn{
+                display: block;
+                margin:1% 2%;
+            }
+            .endbtn{
+                margin-right: 5%;
+            }
+        }
+        @media (min-width:991.98px){
+            .list,.listbtn{
+                display: none !important;
+            }
+        }
+        @media(min-width:768px) and (max-width:991.98px){
+            .logo{
+                width: 20%;
+                position: absolute;
+                left: 40%;
+            }
+            .elements span a,.downarrow,.login{
+                display: none;
+            }
+            .listbtn{
+                display: block;
+                margin:1% 2%;
+            }
+            .list{
+                
+            }
+            .endbtn{
+                margin-right: 5%;
+            }
+        }
+        
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            z-index: 1000;
+            transition: max-height 0.3s ease-in-out;
+        }
+        
+        .navbar-nav .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        /* Custom styling for input box */
+        #searchProduct {
+            border-top: 2px solid var( --secondary); /* Border color */
+            border-left: 2px solid var( --secondary); /* Border color */
+            border-bottom: 2px solid var( --secondary); /* Border color */
+            border-radius: 8px 0px 0px 8px; /* Border radius */
+        }
+        
+        /* Custom styling for button */
+        #searchProductButton {
+            border-top: 2px solid var( --secondary); /* Border color */
+            border-right: 2px solid var( --secondary); /* Border color */
+            border-bottom: 2px solid var( --secondary); /* Border color */
+            border-radius: 0px 8px 8px 0px; /* Border radius */
+            background-color: var( --secondary); /* Button background color */
+            color: var(--background);
+        }
+        #searchProductButton:hover{
+            background-color: var(--primary);
+            border-top: 2px solid var(--primary); /* Border color */
+            border-right: 2px solid var(--primary); /* Border color */
+            border-bottom: 2px solid var(--primary); /* Border color */
+            color: var(--background);
+        }
+        .offcanvas.offcanvas-top {
+            height: fit-content !important;
+        }
+        
+        #headerLink .shop-toggle {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+        
+        #headerLink .shop-toggle:focus {
+            outline: none;
+        }
+        
+        #headerLink .shop-toggle .bi {
+            transition: transform 0.3s;
+        }
+        
+        #headerLink .shop-toggle[aria-expanded="true"] .bi {
+            transform: rotate(180deg);
+        }
+        
+        
+        
+        
+        .headerLink{
+            font-family: 'Space Grotesk';
+            color: var(--primary);
+            font-size: 1.2rem;
+            text-align: left;
+        
+        }
+        
+        /* side canvas work  */
+        .text-white{
+           background-color: var(--primary); 
+        }
+        
+        .text-white:hover{
+            background-color: var(--primary); 
+            
+        }
+        
+        
+        
+        .mycartcanvas{
+            background-color: var(--background);
+        }
+        .mycartcanvas .cartCanvasContainer .cartCanvasCard{
+            background-color: var(--background);
+        }
+        .mycartcanvas .cartCanvasContainer .cartCanvasCard img{
+            background-color: var(--background);
+            transition: 0.1s ease;
+        }
+        .mycartcanvas .cartCanvasContainer .cartCanvasCard img:hover{
+            -webkit-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            transform: scale(1.1);
+            transition: 0.1s ease;
+        }
+        
+        /* searchcanvas work */
+        .searchcanvas{
+            background-color: var(--background);
+        }
+        .productcard{
+            background-color: var(--background);
+        }
+        .sproductcard img{
+            background-color: var(--background);
+            transition: 0.1s ease;
+        }
+        .sproductcard img:hover{
+            -webkit-transform: scale(1.1);
+            -ms-transform: scale(1.1);
+            transform: scale(1.1);
+            transition: 0.1s ease;
+        }
+        
+        
+        .sproductcard {
+            animation: fadeIn 1s ease-in both;
+        }
+        .sproductcard:nth-child(2) {
+            animation-delay: 1s;
+        }
+        .sproductcard:nth-child(3) {
+            animation-delay: 2s;
+        }
+        .sproductcard:nth-child(4) {
+            animation-delay: 3s;
+        }
+        .sproductcard:nth-child(5) {
+            animation-delay: 4s;
+        }
+        center{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                /* transform: translate3d(0, 0, 0); */
+            }
+            to{
+                opacity: 1;
+            }
+        
+        }
+        
+        .headerShop h6 a{
+            color: var(--primary);
+            font-size: 1.5rem;
+            text-decoration: none;
+        }
+        
+        .headerShop li a{
+            color: var(--tertiary);
+            font-size: 1.2rem;
+            text-decoration: none;
+        }
+        .headerShop ul{
+            list-style: none;
+        }
+
+        .list-group-item {
+    position: relative;
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #007bff; /* Adjust the background color as needed */
+}
+
+
+        
+        
+        .full-dropdown {
+            border: none;
+            background-color: var(--white);
+            position: absolute;
+            width: 101vw;
+            left: 12px;
+            top: calc(100% + 10px); 
+            border-radius: 0;
+            box-shadow: none;
+            margin: 0;
+            display: none;
+            opacity: 0; 
+            transition: opacity 0.3s ease; 
+            transform: translate3d(-36.5%, 4%, 0px);
+        }
+        
+        .shopSpan:hover .full-dropdown, .shopSpan:focus .full-dropdown {
+            display: block;
+        }
+        
+        .shopSpan:focus .full-dropdown {
+            top: 0;
+        }
+        
+        
+        .loginSignModal{
+            background-color: var(--white);
+        }
+        .loginSignModal .modal-header{
+            align-items: baseline;
+            text-align: center;
+        }
+        
+        .loginSignModal ul{
+            border: none;
+        }
+        
+        
+        .loginModal .form-control .form-control-lg .form-control-solid{
+            background-color: var(--background);
+        }
+        
+        .loginModal  .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link{
+            color: grey;
+            border: none;
+        }
+        .loginModal .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+            color: var(--secondary);
+            border: none;
+            text-decoration: dashed;
+        }
+        .loginModal .form-control-lg {
+            border-color: var(--background);
+            background-color: var(--background);
+            color: var(--text);
+        }
+        
+        
+        .loginModal button {
+            color: var(--white);
+            background-color: var(--tertiary);
+            border: none;
+            border-radius: 0.3rem;
+            padding: 5px;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .loginModal button:hover {
+            background-color: var(--primary);
+            color: var(--white);
+        }
+        
+        .loginModal button:active {
+            background-color: var(--primary);
+            color: var(--white);
+        }.list{
+            width:screen;
+
+        }
+        
+    </style>
+<body>
+         <!-- Header start-->
+    <header>
+        <div class="flex">
+            <button type="button" class="btn btn-primary listbtn" data-bs-toggle="offcanvas" data-bs-target="#headerLink">
+                <i class="bi bi-list list"></i>
+            </button>
+            <!-- <i class="bi bi-list list"></i> -->
+            <img src="../asset/icon/logo.png" alt="logo" class="logo">
+            <div class="elements">
+                <span>
+                    <a href="#">Home</a>
+                </span>
+                <span class="shopSpan dropdown">
+                    <a  class="shop dropdown-toggle" id="shopDropdown">Shop</a>
+                    <div class="dropdown-menu full-dropdown" id="myDropdown" aria-labelledby="shopDropdown">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="headerShop mb-2">
+                                        <h6><a class="dropdown-item">sidhha</a></h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" >dfg</a></li>
+                                            <li><a class="dropdown-item">cfvgbh</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="headerShop mb-2">
+                                        <h6><a class="dropdown-item" >Airuvedha</a></h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item">fgrg</a></li>
+                                            <li><a class="dropdown-item">dgsdg</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="headerShop mb-2">
+                                        <h6><a class="dropdown-item" href="#">Homiyopathi</a></h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item">rdftgy</a></li>
+                                            <li><a class="dropdown-item" >rtfgy</a></li>
+                                            <li><a class="dropdown-item" >ojkn</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </span>
+    
+                <span>
+                  
+                    <a href="#" >Account</a>
+                    
+                   
+                   
+                </span>
+                <span>
+                    <a href="#">Authors</a>
+                </span>
+            </div>
+            <button class="nav-link endbtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#searchCanvas" aria-controls="searchCanvas">
+                <i class="bi bi-search"></i>
+            </button>
+           
+            <a class="nav-link endbtn" href="#" onclick="check_mycart()">
+                <i class="bi bi-cart2"></i>
+    </a>
+            <button class="login" onclick="login_request()">Login</button>
+            
+        </div>
+    </header>
+    
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="headerLink" aria-labelledby="headerLinkLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="headerLinkLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="headerLink">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <div class="d-flex align-items-center">
+                        <a class="btn btn-toggle shop-toggle nav-link" type="button" data-bs-toggle="collapse" data-bs-target="#shopCollapse" aria-expanded="false">
+                            Shop <i class="bi bi-chevron-down"></i>
+                        </a>
+    
+                    </div>
+                    <div class="collapse" id="shopCollapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="text-align:center;">
+                            <li><a href="product.php" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Categories</a></li>
+                            <li><a href="offers.php" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Offers</a></li>
+                            <li><a href="combo.php" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Combos</a></li>
+                            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Bulk Orders</a></li>
+                            <li><a href="product.php" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Shop All</a></li>
+                        </ul>
+                    </div>
+                </li>
+    
+                <li class="nav-item">
+                   
+                    <a class="nav-link" href="#">Account</a>
+                    
+    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/details">Authors</a>
+                </li>
+                
+                <a class="nav-link" href="#" >Login/Register</a>
+               
+            </ul>
+        </div>
+    </div>
+    <!---------------------------------------------------------------------------------------------------------->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-3">
+                <!-- Author Image in Rounded Division -->
+                <div class="rounded-circle overflow-hidden mx-auto">
+                    <img src="steph.png" alt="Author Image" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-9 author-profile">
+                <!-- Author Information -->
+                <h2>Author Name</h2>
+                <p>Stephen Edwin King (born September 21, 1947) is an American author of horror, supernatural fiction, suspense, crime, science-fiction, and fantasy novels. Called the "King of Horror",[2] his books have sold more than 350 million copies as of 2006,[3] and many have been adapted into films, television series, miniseries, and comic books.[4] He has also written approximately 200 short stories, most of which have been published in book collections.[5] His debut, Carrie, was published in 1974, and was followed by 'Salem's Lot, The Shining, The Stand and The Dead Zone. Different Seasons, a collection of four novellas, was his first major departure from the horror genre. The novellas provided the basis for the films Stand by Me and The Shawshank Redemption. King has published under the pseudonym Richard Bachman and has cowritten works with other authors, notably his friend Peter Straub and sons Joe Hill and Owen King.
+
+                    Several of King's works have won the Bram Stoker and August Derleth Awards. He has also won awards for his overall contribution to literature, including the 2003 Medal for Distinguished Contribution to American Letters,[6][7] the 2007 Grand Master Award from the Mystery Writers of America[8] and the 2014 National Medal of Arts.[9] Joyce Carol Oates called King "a brilliantly rooted, psychologically 'realistic' writer, for whom the American scene has been a continuous source of inspiration, and American popular culture a vast cornucopia of possibilities.</p>
+    
+              
+            
+            </div>
+        </div>
+    </div>
+    
+    <!-- Poll Section (Placeholder) -->
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Books by Author</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Book 1
+                            <span class="badge badge-primary badge-pill">Year 1</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Book 2
+                            <span class="badge badge-primary badge-pill">Year 2</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Book 3
+                            <span class="badge badge-primary badge-pill">Year 3</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Book 4
+                            <span class="badge badge-primary badge-pill">Year 4</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Book 5
+                            <span class="badge badge-primary badge-pill">Year 5</span>
+                        </li>
+                        <!-- Add more books as needed -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!------------------------------------------------------------------------------------------------------------------>
+
+   <!-- HEADER END -->
+</body>
+<script>
+    
+// JS for Headers
+
+document.addEventListener('DOMContentLoaded', function() {
+    const shopSpan = document.querySelector('.shopSpan');
+    const dropdownContent = document.querySelector('.full-dropdown');
+
+    shopSpan.addEventListener('mouseover', function() {
+        dropdownContent.style.display = 'block';
+        dropdownContent.style.opacity = '1'; 
+    });
+
+    dropdownContent.addEventListener('mouseleave', function() {
+        dropdownContent.style.opacity = '0'; 
+        setTimeout(() => {
+            dropdownContent.style.display = 'none';
+        }, 300); 
+    });
+});
+</script>
+</html>

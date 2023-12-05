@@ -499,3 +499,109 @@
   .download-button {
     margin-left: 100px; /* Adjust the margin as needed */
 }
+.prgrs {
+  background: red;
+  margin-left: 25%;
+  width:50%;
+  min-height:40vh;
+  top:50%;
+  left:50%;
+  background-color:white;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+.prgrs .container {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+.prgrs .container .prgrsbar {
+  background: lightsteelblue;
+  width:100%;
+  height: 20px;
+  margin-bottom:20px;
+  border-radius: 12px;
+}
+.prgrs .prgrsbar .barbg {
+  width:0;
+  height: 100%;
+  background-color: gold;
+  border-radius: 12px;
+  
+}
+
+
+.prgrs .prgrsbar .barbg span {
+  float:right;
+  margin-top:-35px;
+  padding: 3px;
+  opacity:0;
+  animation: span1 1.5s ease .1s forwards;
+  z-index: 1;
+  position: relative;
+  
+  color: black;
+}
+.prgrs .prgrsbar .barbg span:before {
+  content:'';
+  position:absolute;
+  width:10px;
+  height:10px;
+  left:calc(50% - 4px);
+  bottom:-10px;
+  z-index:-1;
+  background-color: goldenrod;
+  transform:translateY(-50%) rotate(45deg);
+  animation: span1 1.5s ease .1s forwards;
+}
+
+h3 {
+  margin-bottom: 10px;
+  color: #363536;
+}
+
+.prgrs .prgrsbar:nth-of-type(1) .barbg {
+  animation: bar1 1.5s ease .1s forwards;
+}
+
+.prgrs .prgrsbar:nth-of-type(2) .barbg {
+  animation: bar2 1.5s ease .1s forwards;
+}
+.prgrs .prgrsbar:nth-of-type(3) .barbg {
+  animation: bar3 1.5s ease .1s forwards;
+}
+.prgrs .prgrsbar:nth-of-type(4) .barbg {
+  animation: bar4 1.5s ease .1s forwards;
+}
+.prgrs .prgrsbar:nth-of-type(5) .barbg {
+  animation: bar5 1.5s ease .1s forwards;
+}
+
+
+@keyframes span1 {
+  from { opacity:0;}
+  to {opacity:1;}
+}
+
+@keyframes bar1 {
+  0% {width:0;}
+  100% {width:90%;}
+}
+@keyframes bar2 {
+  0% {width:0;}
+  100% {width:70%;}
+}
+@keyframes bar3 {
+  0% {width:0;}
+  100% {width:50%;}
+}
+@keyframes bar4 {
+  0% {width:0;}
+  100% {width:87%;}
+}
+@keyframes bar5 {
+  0% {width:0;}
+  100% {width:69%;}
+}

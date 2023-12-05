@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
+    <!-- External CSS Files -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto Slab' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=IBM Plex Sans' rel='stylesheet'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="htdocs/asset/icon/favicon.ico" />
+    <!-- Custom CSS Files -->
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Bootstrap Icons CSS (CDN) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+   
+    <link rel="stylesheet" href="../css/details.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <!-- font  -->
+</head>
+
+<body>
+
+    <header>
+        <div class="flex">
+            <button type="button" class="btn btn-primary listbtn" data-bs-toggle="offcanvas" data-bs-target="#headerLink">
+                <i class="bi bi-list list"></i>
+            </button>
+            <!-- <i class="bi bi-list list"></i> -->
+            <img src="../asset/icon/logo.png" alt="logo" class="logo">
+            <div class="elements">
+                <span>
+                    <a href="#">Home</a>
+                </span>
+                <span class="shopSpan dropdown">
+                    <a  class="shop dropdown-toggle" id="shopDropdown">Shop</a>
+                    <div class="dropdown-menu full-dropdown" id="myDropdown" aria-labelledby="shopDropdown">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="headerShop mb-2">
+                                        <h6><a class="dropdown-item">sidhha</a></h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item" >dfg</a></li>
+                                            <li><a class="dropdown-item">cfvgbh</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="headerShop mb-2">
+                                        <h6><a class="dropdown-item" >Airuvedha</a></h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item">fgrg</a></li>
+                                            <li><a class="dropdown-item">dgsdg</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4">
+                                    <div class="headerShop mb-2">
+                                        <h6><a class="dropdown-item" href="#">Homiyopathi</a></h6>
+                                        <ul class="list-unstyled">
+                                            <li><a class="dropdown-item">rdftgy</a></li>
+                                            <li><a class="dropdown-item" >rtfgy</a></li>
+                                            <li><a class="dropdown-item" >ojkn</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </span>
+    
+                <span>
+                  
+                    <a href="#" >Account</a>
+                    
+                   
+                   
+                </span>
+                <span>
+                    <a href="#">Authors</a>
+                </span>
+            </div>
+            <button class="nav-link endbtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#searchCanvas" aria-controls="searchCanvas">
+                <i class="bi bi-search"></i>
+            </button>
+           
+            <a class="nav-link endbtn" href="#" onclick="check_mycart()">
+                <i class="bi bi-cart2"></i>
+    </a>
+            <button class="login" onclick="login_request()">Login</button>
+            
+        </div>
+    </header>
+    
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="headerLink" aria-labelledby="headerLinkLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="headerLinkLabel"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="headerLink">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="/index">Home</a>
+                </li>
+                <li class="nav-item">
+                    <div class="d-flex align-items-center">
+                        <a class="btn btn-toggle shop-toggle nav-link" type="button" data-bs-toggle="collapse" data-bs-target="#shopCollapse" aria-expanded="false">
+                            Shop <i class="bi bi-chevron-down"></i>
+                        </a>
+    
+                    </div>
+                    <div class="collapse" id="shopCollapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small" style="text-align:center;">
+                            <li><a href="product.php" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Categories</a></li>
+                            <li><a href="offers.php" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Offers</a></li>
+                            <li><a href="combo.php" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Combos</a></li>
+                            <li><a href="#" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Bulk Orders</a></li>
+                            <li><a href="product.php" class="link-body-emphasis d-inline-flex text-decoration-none rounded">Shop All</a></li>
+                        </ul>
+                    </div>
+                </li>
+    
+                <li class="nav-item">
+                   
+                    <a class="nav-link" href="#">Account</a>
+                    
+    
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/details">Authors</a>
+                </li>
+                
+                <a class="nav-link" href="#" >Login/Register</a>
+               
+            </ul>
+        </div>
+    </div>
+   <!-- HEADER END -->
+
+   
+
+    <div class="container mt-5 productInfo" style="align-items: center;">
+        <div class="row ">
+            <div class="col-md-6 container productPicture">
+                <div class="fotorama" data-nav="thumbs" data-width="100%" data-navwidth="100%" data-maxheight="300">
+                    <a href="../asset/img/s1.jpg"><img src="../asset/img/s1.jpg" class="detailsimg"></a>
+                    <a href="../asset/img/s2.jpg"><img src="../asset/img/s2.jpg" class="detailsimg"></a>
+                    <a href="../asset/img/s3.webp"><img src="../asset/img/s3.webp" class="detailsimg"></a>
+                    <a href="../asset/img/s4.jpg"><img src="../asset/img/s4.jpg" class="detailsimg"></a>
+                </div>
+            </div>
+            <div class="col-md-6 container productDescription">
+                <div class="container detail mt-3">
+                    <a><i class="bi bi-bookmark-fill" id="saveIt"></i></a>
+                    <h3 class="mt-3 mb-2 productName"><strong class="productname">Medical</strong></h3>
+                    <div class="product-description">
+                        <h6 class="mt-1">This for the study of medical</h6>
+                        <p class="ratings">
+                            <span id="totalProductRatings"></span>
+                        </p>
+                        <h6 class="stock" id="stock"></h6>
+                        
+                        <div class="container buyButton mt-3 mb-2">
+                            <a class="btn addCartButton">Add to Wishlist</a>
+                            <span style="margin-right: 10px;"></span>
+                            <a onclick="review_modal()" class="btn addCartButton" data-toggle="modal" data-target="#reviewModal">Review now</a>
+                        </div>
+                        <div class="container buyButton mt-5 mb-5 download-button">
+                            <a class="btn addCartButton d-block">Download</a>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5 mb-3">
+        <div class="prgrs">
+            <div class="container">
+    
+                <h3>Efficiency</h3>
+                <div class="prgrsbar">
+                    <div class="barbg">
+                        <span>90%</span>
+                    </div>
+                </div>
+                <h3>Beginner Friendly</h3>
+                <div class="prgrsbar">
+                    <div class="barbg">
+                        <span>70%</span>
+                    </div>
+                </div>
+                <h3>Reliability</h3>
+                <div class="prgrsbar">
+                    <div class="barbg">
+                        <span>50%</span>
+                    </div>
+                </div>
+                <h3>Content Updations</h3>
+                <div class="prgrsbar">
+                    <div class="barbg ">
+                        <span>87%</span>
+                    </div>
+                </div>
+                <h3>Hands On</h3>
+                <div class="prgrsbar">
+                    <div class="barbg last">
+                        <span>69%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5 mb-3 description">
+        <center>
+            <h1 class="mt-3 prodes">Book Desciption</h1>
+        </center>
+        <hr />
+        <div class="container desiptionContext">
+            <h5>Author details:</h5>
+            <p class="lead">He was a....</p>
+
+            <h5>content Covered:</h5>
+            <ul class="list-group mb-4">
+                <li class="list-group-item">eyes</li>
+                <li class="list-group-item">medical</li>
+            </ul>
+        </div>
+    </div>
+    <div class="container mt-5 mb-3 customersReviews">
+        <center>
+            <h1 class="mt-3 cusrev">
+                <span>B</span><span>O</span><span>O</span><span>K</span><span>&nbsp;</span><span>R</span><span>E</span><span>V</span><span>I</span><span>E</span><span>W</span><span>S</span>
+            </h1>
+        </center>
+        <hr />
+        <div class="container mt-2 mb-2 reviews">
+            <h4 id="customerName" name="customerName"><span><strong id="customerName">jeffry</strong></span> on <span id="reviewDate">Mar 2023</span></h4>
+            <p class="customerRating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+                <i class="bi bi-star"></i>
+            </p>
+            <p class="customerActualReview" id="customerActualReview" name="customerActualReview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut assumenda a aliquam accusantium dolor. Ratione unde doloremque voluptas sit deleniti architecto. </p>
+        </div>
+        <div class="container mt-2 mb-2 reviews">
+            <h4 id="customerName" name="customerName"><span><strong id="customerName">Santhosh</strong></span> on <span id="reviewDate">Jan 2022</span></h4>
+            <p class="customerRating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-half"></i>
+                <i class="bi bi-star"></i>
+            </p>
+            <p class="customerActualReview" id="customerActualReview" name="customerActualReview">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut assumenda a aliquam accusantium dolor. Ratione unde doloremque voluptas sit deleniti architecto. </p>
+        </div>
+    </div>
+    <div class="container mt-5 mb-3 relatedProduct">
+        <center>
+            <h1 class="mt-3 relpro">RELATED BOOKS</h1>
+        </center>
+        <hr />
+        <div class="container mb-5">
+        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4">
+            <div class="col">
+                <div class="card productcard" style="--i:1">
+                    <div class="card-body">
+                        <img src="../asset/img/s1.jpg" class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice">
+                        <p class="card-title productcard-title text-center" id="productname" name="productname"><strong>Medical</strong></p>
+                        <div class="gotocent">
+                            <p class="ratings">
+                                <span id="totalProductRatings"></span>
+                            </p>
+                            <h6 class="stock" id="stock"></h6>
+                            <a href="details.html"  class="btn morebtnCard">more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+       
+    </div>
+    </div>
+
+    <div class="modal" id="reviewModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Book Review</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <label>1. To what extent does the book cover medical topics in detail?</label>
+                            <br>
+                            <input type="radio" name="q1" value="1">1(Not at all)
+                            <br>
+                            <input type="radio" name="q1" value="2">2(Slightly)
+                            <br>
+                            <input type="radio" name="q1" value="3">3(Moderately)
+                            <br>
+                            <input type="radio" name="q1" value="4">4(Highly)
+                            <br>
+                            <input type="radio" name="q1" value="5">5(Absolutely)
+                            <br>
+                            <br>
+                            <label>2. How easy were the explanations to understand, even if you are not a medical expert?</label>
+                            <br>
+                            <input type="radio" name="q2" value="1">1(Not at all)
+                            <br>
+                            <input type="radio" name="q2" value="2">2(Slightly)
+                            <br>
+                            <input type="radio" name="q2" value="3">3(Moderately)
+                            <br>
+                            <input type="radio" name="q2" value="4">4(Highly)
+                            <br>
+                            <input type="radio" name="q2" value="5">5 (Absolutely)
+                            <br>
+                            <br>
+
+                            <label>3. To what extent do you find the information in the book correct and trustworthy?</label>
+                            <br>
+                            <input type="radio" name="q3" value="1">1 (Not at all)
+                            <br>
+                            <input type="radio" name="q3" value="2">2 (Slightly)
+                            <br>
+                            <input type="radio" name="q3" value="3">3 (Moderately)
+                            <br>
+                            <input type="radio" name="q3" value="4">4 (Highly)
+                            <br>
+                            <input type="radio" name="q3" value="5">5 (Absolutely)
+
+                            <br>
+                            <br>
+                            <label>4. Is the information in the book up-to-date?</label>
+                            <br>
+                            <input type="radio" name="q4" value="1">1 (Not at all)
+                            <br>
+                            <input type="radio" name="q4" value="2">2 (Slightly)
+                            <br>
+                            <input type="radio" name="q4" value="3">3 (Moderately)
+                            <br>
+                            <input type="radio" name="q4" value="4">4 (Highly)
+                            <br>
+                            <input type="radio" name="q4" value="5">5 (Absolutely)
+                            <br>
+                            <br>
+                            <label>5. Does the book provide practical advice that medical professionals can use?</label>
+                            <br>
+                            <input type="radio" name="q5" value="1">1 (Not at all)
+                            <br>
+                            <input type="radio" name="q5" value="2">2 (Minimally)
+                            <br>
+                            <input type="radio" name="q5" value="3">3 (Moderately)
+                            <br>
+                            <input type="radio" name="q5" value="4">4 (Extensively)
+                            <br>
+                            <input type="radio" name="q5" value="5">5 (Comprehensively)
+                            <br>
+                            <br>
+
+                            <label>6. Any review or suggestions?</label>
+                            <textarea name="review" rows="4" cols="50"></textarea>
+                            <br>
+                            <br>
+                        <div>    
+                            <button type="button" class="btn btn-primary" onclick="submitReview()">Submit Review</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()">Close</button>
+                        </div>                  
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer pt-10">
+        <div class="container pt-5">
+          <div class="row pb-2">
+      
+            <!-- begin::about us -->
+            <div class="col-md-4 mb-4 col-sm-6">
+              <div class="menu-content text-muted pb-4 text-uppercase fs-5">About Us</div>
+              <ul class="list-unstyled">
+                <li><a href="/about-us" class="pb-5 fs-6">About Us</a></li>
+                <li><a href="/contact-us" class="pb-5 fs-6">Contact Us</a></li>
+                <li><a href="/blog" class="pb-5 fs-6">Blog</a></li>
+                <!-- <li><a href="advertise">Advertise With Us</a></li> -->
+              </ul>
+            </div>
+            <!-- end::about us -->
+      
+            <!-- begin::useful links -->
+            <div class="col-md-4 mb-4 col-sm-6">
+              <div class="menu-content text-muted pb-4 text-uppercase fs-5">Useful Links</div>
+              <ul class="list-unstyled">
+                <li><a href="#" class="pb-5 fs-6">Author</a></li>
+                <li><a href="#" class="pb-5 fs-6">Faculty</a></li>
+                <!-- <li><a href="replacement.html#privacy" class="pb-5 fs-6">Privacy Policy</a></li>
+                <li><a href="replacement.html#shipping" class="pb-5 fs-6">Shipping Policy</a></li>
+                <li><a href="replacement.html#replace" class="pb-5 fs-6">Replacement Policy</a></li> -->
+                <li class="footer-link-c terms-about"><a href="policy#privacy" class="pb-5 fs-6">Students</a> </li>
+              </ul>
+            </div>
+            <!-- end::useful links -->
+      
+            <!-- begin::stay connected -->
+            <div class="col-md-4">
+              <div class="menu-content text-muted pb-4 text-uppercase fs-5">Stay Connected</div>
+                      <!-- begin::social links -->
+              <div class="social-links">
+                <div class="symbol-list d-flex flex-wrap">
+                  <div class="symbol mx-2">
+                    <a href="" target="_blank" class="social-icon-link" rel="noopener noreferrer"><i class="symbol-label bi bi-facebook facebook" alt="Aarganic on Facebook"></i></a>
+                  </div>
+                  <div class="symbol mx-2">
+                    <a href="" target="_blank" class="social-icon-link" rel="noopener noreferrer"><i class="symbol-label bi bi-instagram instagram" alt="Aarganic on Instagram"></i></a>
+                  </div>
+                  <div class="symbol mx-2">
+                    <a href="" target="_blank" class="social-icon-link" rel="noopener noreferrer"><i class="symbol-label bi bi-youtube youtube" alt="Aarganic on Youtube"></i></a>
+                  </div>
+                  <div class="symbol mx-2">
+                    <a href="" target="_blank" class="social-icon-link" rel="noopener noreferrer"><i class="symbol-label bi bi-twitter-x twitter" alt="Aarganic on Twitter"></i></a>
+                  </div>
+                </div>
+              </div>
+              <!-- end::social links -->
+            </div>
+            <!-- end::stay connected -->
+      
+          </div>
+        </div>
+      
+      </footer>
+    <!-- External JavaScript Files -->
+    <script src="htdocs/js/script.js"></script>
+    <script src="htdocs/js/details.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    
+<script>   
+    
+    function review_modal(){
+        alert("345");
+        $('#reviewModal').modal('show');
+    }
+
+    const insertRating = function(productRating, totalRatings) {
+        const floatPart = productRating - Math.floor(productRating);
+    
+        let ratingsElements = document.querySelectorAll(".ratings");
+    
+        ratingsElements.forEach(element => {
+    
+            let decimalPart = Math.floor(productRating);
+            let html = '';
+    
+            while (decimalPart > 0) {
+                html += '<i class="bi bi-star-fill"></i>';
+                decimalPart--;
+            }
+    
+            if (floatPart !== 0) {
+                html += '<i class="bi bi-star-half"></i>';
+            }
+    
+            let remainingPart = 5 - Math.floor(productRating) - (2 * floatPart);
+    
+            while (remainingPart > 0) {
+                html += '<i class="bi bi-star"></i>';
+                remainingPart--;
+            }
+    
+            html += " (" + totalRatings + ")";
+    
+            element.innerHTML = html;
+        });
+    }
+    
+    // Example usage
+    insertRating(3.5, 100);
+
+    
+document.addEventListener('DOMContentLoaded', function() {
+    const shopSpan = document.querySelector('.shopSpan');
+    const dropdownContent = document.querySelector('.full-dropdown');
+
+    shopSpan.addEventListener('mouseover', function() {
+        dropdownContent.style.display = 'block';
+        dropdownContent.style.opacity = '1'; 
+    });
+
+    dropdownContent.addEventListener('mouseleave', function() {
+        dropdownContent.style.opacity = '0'; 
+        setTimeout(() => {
+            dropdownContent.style.display = 'none';
+        }, 300); 
+    });
+});
+
+    </script>
+</body>
+
+</html>

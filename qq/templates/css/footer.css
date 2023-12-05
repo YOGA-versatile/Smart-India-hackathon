@@ -1,0 +1,78 @@
+:root {
+    --text: #0a0b0a;
+    --background: #F5F5F5;
+    --primary: #224952;
+    --secondary: #186049;
+    --tertiary: #247158;
+    --forth : #6AB29B;
+    --accent: #E4D5C7;
+    --white: #fff;
+    /* font  */
+    --subtitle :1.8rem;
+  }
+.footer {
+    background-color: var(--white);
+} 
+
+.footer ul li {
+    margin-bottom: .5rem
+}
+
+.footer ul li a {
+    color: #5b5b5b;
+    text-decoration: none;;
+}
+
+.footer ul li a:hover {
+    text-decoration: none;
+    color:blue;
+}
+
+.footer .social-links i {
+    font-size: 2.25rem;
+    background-color: #fff!important
+}
+
+.footer .social-links .facebook:hover {
+    color: #3b5999
+}
+
+.footer .social-links .instagram:hover {
+    color: #c13584
+}
+
+.footer .social-links .twitter:hover {
+    color: #000000
+}
+
+.footer .social-links .youtube:hover {
+    color: red
+}
+
+.footer .accepted-payments li:not(:last-child) {
+    margin-right: .75rem
+}
+
+.symbol {
+    display: inline-block;
+    flex-shrink: 0;
+    position: relative;
+    border-radius: .475rem;
+}
+
+.symbol .symbol-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: #3f4254;
+    background-color: #f5f8fa;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: .475rem;
+}
+
+.social-icon-link {
+    text-decoration: none; 
+}
